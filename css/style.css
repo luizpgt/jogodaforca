@@ -1,0 +1,18 @@
+body{
+    background-color: rgb(68, 67, 67);
+}
+h1, p, label {
+    color: blanchedalmond;
+}
+button {
+    color: blanchedalmond;
+}
+.button {
+    color: rgb(68, 67, 67);
+    background-color: blanchedalmond;
+    border: none;
+
+}
+.button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
