@@ -1,25 +1,14 @@
-# jogodaforca
-Fazendo um jogo da forca com JS, HTML e CSS.
+# Jogo Da Forca
+Um jogo da forca tradicional usando JS, HTML e CSS.
 
-comandos git:: 
+<h4 align="center"> 
+	Em construção...
+</h4>
 
-inicializando repositorio::
-`
-git init
 
-git add .
+### 🛠 Tecnologias
 
-git commit -m "first commit"
-
-git remote add origin {rep.link}
-
-git push -u origin master
-`
-fazendo atualizacoes ao repositorio::
-`
-git add .
-
-git commit -m "commit"
-
-git push orign master
-`
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Node.js](https://nodejs.org/en/)
+- [HTML5]
+- [CSS3]
