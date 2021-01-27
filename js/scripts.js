@@ -46,6 +46,18 @@ function spoiler() {
 
 }
 //colocar a entrada em um array
+function armazen() {
+
+    var word = sessionStorage.getItem("word");
+    var tamanho = word.length;
+    console.log(tamanho);
+    for (let index = 0; index < word.length; index++) {
+        
+        console.log(word.substr(index, 1));
+    }
+    //console.log(word.substr(1));
+}
+armazen();
 //medir esse array e mostar a array.length
 
 
