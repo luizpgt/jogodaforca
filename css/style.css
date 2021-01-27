@@ -22,3 +22,7 @@ input {
     background-color: rgb(247, 211, 158);
     
 }
+.wordspace {
+   /* letter-spacing: 4px;*/
+    text-decoration: underline;
+}

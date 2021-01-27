@@ -6,9 +6,7 @@ function timer() {
     document.getElementById("relogio").innerHTML = htmltimer;
     setTimeout('timer()', 500);
 }
-timer();
-
-//pegar uma entrada de palavra do user
+//recebendo input do usuario
 var form = document.getElementById('form');
 var word = document.getElementById('word')
 
@@ -16,13 +14,12 @@ form.addEventListener('submit', function (e) {
     if (word.value == "") {
         var msginvalid = `<p>Por favor, insira uma palavra!</p>`;
         document.getElementById('wordprint').innerHTML = msginvalid;
-    }else {
+    } else {
         sessionStorage.setItem("word", word.value);
         var htmlword = `<p>Palavra: <b>${sessionStorage.getItem("word")}</b> salva!</p>`
         document.getElementById('wordprint').innerHTML = htmlword;
     }
 })
-
 //spoiler para mostrar a palavra escolhida pelo usuario
 function spoiler() {
     //estilos do botao
@@ -42,50 +39,57 @@ function spoiler() {
     } else {
         document.getElementById('spoiler').style.display = 'none'
     }
-
-
 }
-//colocar a entrada em um array
+//colocar a palavra entrada dentro de um array /medir esse array e mostar a array.length
 function armazen() {
-
     var word = sessionStorage.getItem("word");
-    var tamanho = word.length;
-    console.log(tamanho);
+    sessionStorage.setItem("wordlength", sessionStorage.getItem("word").length);
+    var wordarray = [];
     for (let index = 0; index < word.length; index++) {
-        
-        console.log(word.substr(index, 1));
+        wordarray.push(word.substr(index, 1));
+        console.log(wordarray[index]);
+        //console.log(word.substr(index, 1));
     }
+    sessionStorage.setItem("wordarray", wordarray);
     //console.log(word.substr(1));
 }
-armazen();
-//medir esse array e mostar a array.length
+//exibindo a palavra na tela 
+function showword() {
+    var htmlshowspace = "";
+    for (let index = 0; index < sessionStorage.getItem("wordlength"); index++) {
+        //console.log(index);
+        //console.log('x');
+        var htmlshowpart = `${sessionStorage.getItem("word").substr(index, 1).toUpperCase()}&nbsp;&nbsp;&nbsp;`
+        htmlshowspace += htmlshowpart;
+        console.log(sessionStorage.getItem("word").substr(index, 1));
+    }
+    document.getElementById('wordspace').innerHTML = htmlshowspace;
 
+    //var htmlshowword = `< p > ${ sessionStorage.getItem("wordarray") }</p > `
+    //document.getElementById('wordspace').innerHTML = htmlshowword;
+}
 
-/*
+//exibindo somente x ao inves da palavra
+function showspaces() {
+    var htmlshowspaces = "";
+    for (let index = 0; index < sessionStorage.getItem("wordlength"); index++) {
+        var htmlshow = "&nbsp;x";
+        htmlshowspaces += htmlshow;
+    }
+    document.getElementById('wordspace').innerHTML = htmlshowspaces;
+}
 
-var form = document.getElementById('formulario');
-var campo = document.getElementById('campo');
+//funcao inutil
+function mostrar() {
 
-form.addEventListener('submit', function(e) {
-    // alerta o valor do campo
-    alert(campo.value);
+    console.log(sessionStorage.getItem("wordarray"));
+    console.log(sessionStorage.getItem("wordarray").length)
+}
 
-    // impede o envio do form
-    e.preventDefault();
-});
-
-
-
-
-var square = function (numero) {
-
-    return numero * numero
-
-};
-square(5);
 
 
 timer();
-
-
-*/
+armazen();
+mostrar();
+//showword();
+showspaces();
