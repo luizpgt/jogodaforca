@@ -2,7 +2,7 @@
 Um jogo da forca tradicional usando JS, HTML e CSS.
 
 <h4 align="center"> 
-	Em construção...
+	momentaneamente abandonado[...]
 </h4>
 
 
